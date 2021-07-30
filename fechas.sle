@@ -1,0 +1,35 @@
+var
+fecha:cadena
+flag:logico
+inicio
+cls()
+	imprimir("Ingrese una fecha en el formato dd/mm/aaaa\n")
+	leer(fecha)
+	mientras(flag <> TRUE)
+	{
+		Verifbarras(fecha)
+		si((val(substr(fecha,7,10)) < 1998))
+		{
+			imprimir("\nERROR")
+			imprimir("\nVuelva a ingresar la fecha: ")
+			leer(fecha)
+			sino si((val(substr(fecha,7,10)) > 1998) and ((val(substr(fecha,7,10)) <= 2000)))flag = TRUE
+		}
+	}
+imprimir("\nLogre salir del ciclo")
+fin
+
+//Funcion que verifica el formato de separacion en barras de la fecha
+subrutina Verifbarras(fecha:cadena) retorna logico
+var flag:logico
+inicio
+si((substr(fecha,3,3) == '/') and (substr(fecha,6,6) == '/'))
+{
+	 flag = TRUE
+	imprimir(substr(fecha,3,1),"\n")
+	imprimir(substr(fecha,6,1),"\n")
+	 sino flag = FALSE ;imprimir(substr(fecha,3,1),"\n")
+	;imprimir(substr(fecha,6,1),"\n")
+}
+retorna flag
+fin

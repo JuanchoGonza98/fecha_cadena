@@ -17,6 +17,7 @@ cls()
 		}
 	}
 imprimir("\nLogre salir del ciclo")
+imprimir("\nBAI MUNDO")
 fin
 
 //Funcion que verifica el formato de separacion en barras de la fecha
